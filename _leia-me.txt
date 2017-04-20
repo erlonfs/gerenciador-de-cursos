@@ -1,0 +1,2 @@
+database: db_encheivos //Usar o "db_encheivos.sql" na pasta "sql" para criacao
+Atencao: Nao esquecer de configurar o atributo estatico "UrlBase" da classe "Config"

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Enchei-vos</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      
+      <!-- Le styles -->
+      <link href="Contents/css/bootstrap-responsive.css" rel="stylesheet" />
+      <link href="Contents/css/bootstrap.css" rel="stylesheet" />
+      <link href="Contents/css/estilos.css" rel="stylesheet" type="text/css" />
+      
+      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<script src="Contents/js/jquery.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+  	$(function() {
+$('.btBarraLateral').click(
+			function(){
+				///$('.barraLateral').css('right','-5px');
+				//$('.barraLateral').animate({right: '-5px', width: '500px'}, 'fast');
+				//$(this).addClass('aberto');
+				
+				if($('.barraLateral').css('right') == '-5px'){
+					$('.barraLateral').animate({right: '-480px'}, 'fast');
+					$(this).removeClass('aberto');
+						
+				} else {
+					$('.barraLateral').animate({right: '-5px'}, 'fast');
+					$(this).addClass('aberto');
+				}
+			}
+		);
+		
+		// Para modal-fluid
+
+			{
+		$('.modalFluid').css({
+			'marginLeft': - ($('.modalFluid').width() / 2),
+		}).find('.modal-body').css({
+			'max-height': $(document).height() - 180
+		}).end().css({
+			'marginTop': - ($('.modalFluid').outerHeight() / 2)
+		});
+		}
+		$(window).resize( function(){
+		if(!$(document).width() < 800){
+		alinhaModal();
+		}
+		})
+		alinhaModal();
+	});
+	</script>	
+    
+  </head>
+    
+<body>
+<!-- ///////// Barra Lateral --> 
+
+<div class="barraLateral">
+	<div class="titBarraLateral"> <a title="Clique para Expandir" class="btBarraLateral header-table"><<  Aniversariantes da Semana</a> </div> 
+    <div style="padding-top:5px; padding-left:25px; padding-right:25px; padding-bottom:7px;"> 
+    <table class="table table-striped table-bordered table-condensed bgtable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th width="15%">Data</th>
+                            <th width="15%">Dados</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr><tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>          
+                </table>
+    </div>
+</div> 
+<!-- ///////// Barra Lateral -->
+
+<div class="box-alerta"></div>
+<div class="containerTopo">
+	<div class="usuario">
+    	<div class="btn-group pull-right">
+            <a class="btn" href="#"><i class="icon-user"></i> Usuário</a>
+            <a class="btn btn-danger" href="index.html"><i class="icon-remove icon-white"></i> Sair</a>
+         </div>
+	</div>
+	
+    <div class="logo"><img src="Contents/img/logo.jpg" width="208" height="64"></div>
+    <div class="menu">    
+        <div id="menu">
+            <ul>
+                <li><a href="principal.html"><i class="icon-home icon-white"></i> Home</a></li>
+                <li><a href="usuarios.html"><i class="icon-user icon-white"></i> Usuarios</a></li>
+                <li><a href="cursos.html"><i class="icon-book icon-white"></i> Cursos </a></li>
+                <li><a href="participantes.html"><i class="icon-list-alt icon-white"></i> Participantes</a></li>
+                <li class="pull-left">
+                    <select style="width:130px; margin: 0 5px 0 5px;">
+                      <option>** Semestre **</option>
+                      <option>2013/01</option>
+                      <option>2013/02</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-geral">
+    <div class="row-fluid">
+    	<div class="span12">
+        
+            
+        
+ 
+        	 <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle principal" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Nome e Local do curso #1
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">
+                   <table class="table table-bordered table-striped fontMaior">
+                          <thead class="header-table">
+                              <tr>
+                                <th width="55%">Nome</th>
+                                <th width="22%">Função / Missão</th>
+                                <th width="23%">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                           
+                            </tbody>
+                          </table>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle principal" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  Nome e Local do curso #2
+                </a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner">
+                 <table class="table table-bordered table-striped fontMaior">
+                          <thead class="header-table">
+                              <tr>
+                                <th width="55%">Nome</th>
+                                <th width="22%">Função / Missão</th>
+                                <th width="23%">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                           
+                            </tbody>
+                          </table>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle principal" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                  Nome e Local do curso #3
+                </a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+                <div class="accordion-inner">
+                 <table class="table table-bordered table-striped fontMaior">
+                          <thead class="header-table">
+                              <tr>
+                                <th width="55%">Nome</th>
+                                <th width="22%">Função / Missão</th>
+                                <th width="23%">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                           
+                            </tbody>
+                          </table>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle principal" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                  Nome e Local do curso #4
+                </a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+                <div class="accordion-inner">
+                   <table class="table table-bordered table-striped fontMaior">
+                          <thead class="header-table">
+                              <tr>
+                                <th width="55%">Nome</th>
+                                <th width="22%">Função / Missão</th>
+                                <th width="23%">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                           
+                            </tbody>
+                          </table>
+                   
+                </div>
+              </div>
+            </div>
+          </div>
+
+        	
+		</div>                     
+	</div>
+</div>
+
+		<div id="myModal" class="modalFluid hide fade">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3>Dados do Participante</h3>
+            </div>
+            <div class="modal-body">
+              <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Dados</th>
+                            <th>Fornecidos</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Nome:</td>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                    </tr>
+                    <tr>
+                        <td>Data de Nascimento:</td>
+                        <td>24/08/2012</td>
+                    </tr>
+                    <tr>
+                        <td>Sexo:</td>
+                        <td>Masculino</td>
+                    </tr>
+                    <tr>
+                        <td>Estado Civil:</td>
+                        <td>Solteiro</td>
+                    </tr>
+                    <tr>
+                        <td>Endereço:</td>
+                        <td>Rua Bolivia</td>
+                    </tr>
+                    <tr>
+                        <td>Bairro:</td>
+                        <td>Santa Rosa II</td>
+                    </tr>
+                    <tr>
+                        <td>Cidade:</td>
+                        <td>Cuiaba</td>
+                    </tr>
+                    <tr>
+                        <td>Estado:</td>
+                        <td>Mato Grosso</td>
+                    </tr>
+                    <tr>
+                        <td>Função / Missão:</td>
+                        <td>Servo Auxiliar</td>
+                    </tr>
+                    <tr>
+                        <td>Local/Curso:</td>
+                        <td>Paroquia Sao Goncalo</td>
+                    </tr>
+                    <tr>
+                        <td>Cidade do Curso:</td>
+                        <td>Cuiaba</td>
+                    </tr>
+                    <tr>
+                        <td>Telefone:</td>
+                        <td>3626 0909</td>
+                    </tr>
+                    <tr>
+                        <td>Celular:</td>
+                        <td>65 96710456</td>
+                    </tr>
+                     <tr>
+                        <td>E-mail:</td>
+                        <td>stratobeto@hotmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Profissão:</td>
+                        <td>Desenvolvedor Web</td>
+                    </tr>
+                    <tr>
+                        <td>Instituição em que Trabalha:</td>
+                        <td>Tecnomapas Ltda.</td>
+                    </tr>
+                    <tr>
+                        <td>Endereço Comercial:</td>
+                        <td>Ruas alguma coisa</td>
+                    </tr>
+                    <tr>
+                        <td>Bairro Comercial:</td>
+                        <td>Bosque da Saude</td>
+                    </tr>
+                    <tr>
+                        <td>Sacramentos:</td>
+                        <td>Batizado, Crisma</td>
+                    </tr>
+                    <tr>
+                        <td>Voluntario:</td>
+                        <td>GAJ - Grupo de Oração , Projeto Mana, Intercessor </td>
+                    </tr>
+                    <tr>
+                        <td>Veiculo:</td>
+                        <td>Moto, Caminhonete </td>
+                    </tr>
+                    
+                </table>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" data-dismiss="modal" >Fechar</a>
+              <a href="#" class="btn"><i class="icon-file"></i> Gerar PDF</a>
+            </div>
+          </div>
+
+<div class="rodape">
+ Copyright © 2012 | Enchei-vos - Todos os Direitos Reservados       
+</div>
+
+
+<script src="Contents/js/jquery.js"></script>
+<script src="Contents/js/utilities.js"></script>    
+<script src="Contents/js/bootstrap-transition.js"></script>
+<script src="Contents/js/bootstrap-alert.js"></script>
+<script src="Contents/js/bootstrap-modal.js"></script>
+<script src="Contents/js/bootstrap-dropdown.js"></script>
+<script src="Contents/js/bootstrap-scrollspy.js"></script>
+<script src="Contents/js/bootstrap-tab.js"></script>
+<script src="Contents/js/bootstrap-tooltip.js"></script>
+<script src="Contents/js/bootstrap-popover.js"></script>
+<script src="Contents/js/bootstrap-button.js"></script>
+<script src="Contents/js/bootstrap-collapse.js"></script>
+<script src="Contents/js/bootstrap-carousel.js"></script>
+<script src="Contents/js/bootstrap-typeahead.js"></script>
+    
+</body>
+</html>

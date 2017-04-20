@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Enchei-vos</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      
+      <!-- Le styles -->
+      <link href="Contents/css/bootstrap-responsive.css" rel="stylesheet" />
+      <link href="Contents/css/bootstrap.css" rel="stylesheet" />
+      <link href="Contents/css/estilos.css" rel="stylesheet" type="text/css" />
+      
+      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<script src="Contents/js/jquery.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+  	$(function() {
+$('.btBarraLateral').click(
+			function(){
+				///$('.barraLateral').css('right','-5px');
+				//$('.barraLateral').animate({right: '-5px', width: '500px'}, 'fast');
+				//$(this).addClass('aberto');
+				
+				if($('.barraLateral').css('right') == '-5px'){
+					$('.barraLateral').animate({right: '-480px'}, 'fast');
+					$(this).removeClass('aberto');
+						
+				} else {
+					$('.barraLateral').animate({right: '-5px'}, 'fast');
+					$(this).addClass('aberto');
+				}
+			}
+		);
+		
+		// Para modal-fluid
+
+			{
+		$('.modalFluid').css({
+			'marginLeft': - ($('.modalFluid').width() / 2),
+		}).find('.modal-body').css({
+			'max-height': $(document).height() - 180
+		}).end().css({
+			'marginTop': - ($('.modalFluid').outerHeight() / 2)
+		});
+		}
+		$(window).resize( function(){
+		if(!$(document).width() < 800){
+		alinhaModal();
+		}
+		})
+		alinhaModal();
+	});
+	</script>	
+ 
+  </head>
+    
+<body>
+<!-- ///////// Barra Lateral --> 
+
+<div class="barraLateral">
+	<div class="titBarraLateral"> <a title="Clique para Expandir" class="btBarraLateral header-table"><<  Aniversariantes da Semana</a> </div> 
+    <div style="padding-top:5px; padding-left:25px; padding-right:25px; padding-bottom:7px;"> 
+    <table class="table table-striped table-bordered table-condensed bgtable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th width="15%">Data</th>
+                            <th width="15%">Dados</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>
+                    <tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr><tr>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                        <td>24/08/1987</td>
+                        <td><div class="btn btn-mini"><i class="icon-eye-open"></i> Ver</div></td>
+                    </tr>          
+                </table>
+    </div>
+</div> 
+<div class="box-alerta"></div>
+<!-- ///////// Barra Lateral -->
+<div class="containerTopo">
+	<div class="usuario">
+    	<div class="btn-group pull-right">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="icon-user"></i> Usuário
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Perfil</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+         </div>
+	</div>
+	
+    <div class="logo"><img src="Contents/img/logo.jpg" width="208" height="64"></div>
+    <div class="menu">    
+        <div id="menu">
+            <ul>
+            <li><a href="principal.html"><i class="icon-home icon-white"></i> Home</a></li>
+            <li><a href="usuarios.html"><i class="icon-user icon-white"></i> Usuarios</a></li>
+            <li><a href="cursos.html"><i class="icon-book icon-white"></i> Cursos </a></li>
+            <li><a href="participantes.html"><i class="icon-list-alt icon-white"></i> Participantes</a></li>
+            <li><a href="index.html"><i class="icon-remove icon-white"></i> Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-geral">
+    <div class="row-fluid">
+    	<div class="span12">
+        
+        	<div class="tabbable"> <!-- Only required for left/right tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" class="btAba" data-toggle="tab">Cadastrar Novo</a></li>
+                    <li><a href="#tab2" class="btAba" data-toggle="tab">Associar</a></li>
+                    <li><a href="#tab3" class="btAba" data-toggle="tab">Listar</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                    <pre class="titulo">Cadastrar novo participante</pre>	
+                    	<form class="well">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <label>Nome Completo</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                                <label>Data de Nascimento</label>
+                                <input type="date" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>Sexo</label>
+                                    <input class="radio" type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_0">&nbsp; Masculino &nbsp; &nbsp;| &nbsp; &nbsp;
+                                    <input class="radio" type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1">&nbsp; Feminino
+                            </div>
+                          
+                         <div class="row-fluid">   
+                            <div class="span9">
+                            	<label>Endereço</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>N&ordm;</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>    
+                        <div class="row-fluid">   
+                            <div class="span5">
+                            	<label>Bairro</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>CEP</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span2">
+                            <label>Cidade</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="span2">
+                            <label>Estado</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                         </div>
+                         <div class="row-fluid">   
+                            <div class="span12">
+                            <label>Complemento</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span3">
+                            <label>Telefone fixo</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>Celular 01</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>Celular 02</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>Celular 03</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span6">
+                            <label>E-mail 01</label>
+                                <input type="text" class="span12">  
+                            </div> 
+                            <div class="span6">
+                            <label>E-mail 02</label>
+                                <input type="text" class="span12">  
+                            </div>                              
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span6">
+                            <label>Nome da M&atilde;e Responsável, Tutor ou Parentesco</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span6">
+                            <label>Nome do Pai, Responsável, Tutor ou Parentesco</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span3">
+                            <label>Estado Civil</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span9">
+                            <label>Nome do(a) Cônjuge / Companheiro(a)</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span7">
+                            <label>Instituição em que Trabalha</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span5">
+                            <label>Profissão</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid">   
+                            <div class="span9">
+                            	<label>Endereço Comercial</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>N&ordm;</label>
+                                <input type="text" class="span12">
+                            </div>
+                        </div>    
+                        <div class="row-fluid">   
+                            <div class="span5">
+                            	<label>Bairro</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span3">
+                            <label>CEP</label>
+                                <input type="text" class="span12">
+                            </div>
+                            <div class="span2">
+                            <label>Cidade</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="span2">
+                            <label>Estado</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                         </div>
+                           
+                        <div class="row-fluid">   
+                            <div class="span12">
+                             <label>Informações quanto aos Sacramentos </label>
+                                    <input class="checkbox" type="checkbox">&nbsp; Batizado &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Primeira Eucaristia &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Crisma &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Casado &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Casado no Religioso &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Casado no Civil &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Juntados &nbsp; &nbsp;| &nbsp; &nbsp;
+                                    <input class="checkbox" type="checkbox">&nbsp; Segunda União
+                            </div>
+                        </div>   
+                        <hr>
+                        <div class="row-fluid">   
+                            <div class="span12">
+                             <label>Na Missão Enchei-vos gostaria de ajudar em qual desses setores? </label>
+                                    <input class="checkbox" type="checkbox">&nbsp; Limpeza em retiro &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Cozinha &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Livraria &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Projeto Mana &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Auxiliar &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Músico &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Intercessor &nbsp; &nbsp;| &nbsp; &nbsp;
+                                    <input class="checkbox" type="checkbox">&nbsp; Blitz da evangelização &nbsp; &nbsp;| &nbsp; &nbsp;<br />
+                                    <input class="checkbox" type="checkbox">&nbsp; GAJ - Grupo de Oração &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Catequese na Igreja &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Conscientização Fé e Política  &nbsp; &nbsp;| &nbsp; &nbsp;
+                                    <input class="checkbox" type="checkbox">&nbsp; Retirinho das criançãs &nbsp; &nbsp;| &nbsp; &nbsp;
+                                    <input class="checkbox" type="checkbox"> &nbsp; Outros
+                            </div>
+                        </div> 
+                        <hr>
+                        <div class="row-fluid">   
+                            <div class="span12">
+                             <label>Possui veículos</label>
+                                    <input class="checkbox" type="checkbox">&nbsp; Motocicleta &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Carro &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Caminhonete &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; Caminhão &nbsp; &nbsp;| &nbsp; &nbsp; 
+                                    <input class="checkbox" type="checkbox">&nbsp; MiniVan &nbsp; &nbsp;| &nbsp; &nbsp; 				
+                                    <input class="checkbox" type="checkbox"> &nbsp; Outros
+                                  
+                            </div>
+                        </div>   
+                         <hr>
+                         <div class="pull-right">
+                        <a class="btn btn-primary btn-large" href="#tab2" data-toggle="tab"><i class="icon-ok icon-white"></i> Salvar</a>
+                        <button type="submit" class="btn btn-danger btn-large"><i class="icon-remove icon-white"></i> Cancelar</button>
+                     	</div>
+                     </div>
+                     </form>
+					</div>
+                   
+                          
+                     <div class="tab-pane" id="tab2">
+                       <pre class="titulo">Associar participates</pre>	
+					<form class="well">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                	<h2>Cesar Alberto Delgadillo Paixao</h2>
+                                    <hr>
+                                </div>
+                            </div>
+                                
+                   			<div class="row-fluid">   
+                            <div class="span5">
+                            	<label>Local do Curso Enchei-vos</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="span5">
+                            <label>Função / Missão</label>
+                                <select class="span12" id="select01">
+                                    <option>Selecione...</option>
+                                    <option>Participante</option>
+                                    <option>Formador</option>
+                                    <option>Servo</option>
+                                    <option>Servo Auxiliar</option>
+                                    <option>Músico</option>
+                                    <option>Intercessor</option>
+                                </select>
+                            </div>  
+                     <button type="submit" class="span2 btn btn-success" style="margin-top:23px;"><i class="icon-plus-sign icon-white"></i> Adicionar</button>
+                            
+                         </div>
+                         <hr>
+                            
+                   <table class="table table-striped table-bordered table-condensed">
+                    <thead class="header-table">
+                        <tr>
+                            <th width="45%">Local do Curso Enchei-vos</th>
+                            <th width="45%">Função / Missão</th>
+                            <th width="10%">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Paroquia São Gonçalo</td>
+                        <td>Servo Auxiliar</td>
+                        <td><div class="btn btn-mini"><i class="icon-trash"></i></div></td>
+                    </tr>
+                    
+                
+                </table>
+                                                                      
+                        
+                        <div class="row-fluid">  
+                           <div class="span12">
+                           	<div class="pull-right">
+                            <a class="btn btn-large btn-warning" href="#tab3" data-toggle="tab"><i class="icon-refresh icon-white"></i> Associar</a>
+                            </div>
+                            </div>  	 
+                         </div>
+                    	</form>
+                    </div>
+                   
+                    <div class="tab-pane" id="tab3">
+                       <pre class="titulo">Lista dos participates &nbsp; <a href="#" class="btn btn-mini btn-uteis pull-right"><i class="icon-file"></i> Gerar PDF</a></pre>	<br />
+                          <form> 
+                          <div class="titulo"> Buscar/Filtrar <i class="icon-search"></i></div>
+                          <div class="row-fluid">
+                          	<div class="span3">
+                                <label> Nome </label>                      
+                                	<input type="text" class="span12">
+                             </div>
+                             <div class="span2">       
+                                <label>Local</label>
+                                    <select class=" span12" id="select01">
+                                        <option>Selecione...</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select> 
+                               </div>  
+                               <div class="span2">    
+                                <label>Função </label>
+                                    <select class="span12" id="select01">
+                                        <option>Selecione...</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>	
+                                    </select>
+                                </div>
+                                <div class="span2">
+                                <label>Cidade</label>
+                                    <select class="span12" id="select01">
+                                        <option>Selecione...</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                 </div>
+                                 <div class="span2">
+                                <label>Estado</label>
+                                    <select class="span12" id="select01">
+                                        <option>Selecione...</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="pull-right">
+                                
+                                <button type="submit" class="btn" style="margin-top:23px;"><i class="icon-search"></i> Buscar</button>
+                                </div>
+                            
+                            </form>
+                        </div>
+
+                   		    <table class="table table-bordered table-striped fontMaior">
+                          <thead class="header-table">
+                              <tr>
+                                <th width="55%">Nome</th>
+                                <th width="22%">Função / Missão</th>
+                                <th width="23%">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td><a href="#">Cesar Alberto Delgadillo Paixao</a></td>
+                                <td>Servo Auxiliar</td>
+                                <td><div class="pull-right"><a data-toggle="modal" href="#myModal" class="btn btn-mini" title="Ver Perfil"><i class="icon-eye-open"></i> Ver</a>
+                                 <a href="#" class="btn btn-mini" title="Editar Perfil"><i class="icon-pencil"></i> Editar</a>
+                                 <a href="#" class="btn btn-mini btn-danger" title="Excluir Perfil"><i class=" icon-trash icon-white"></i> Excluir</a></div>
+                                 </td>
+                              </tr>
+                           
+                            </tbody>
+                          </table>
+                    
+                    </div>
+             </div>
+         
+</div></div></div>
+        	
+		</div>                     
+	</div>
+</div>
+
+		<div id="myModal" class="modalFluid hide fade">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3>Dados do Participante</h3>
+            </div>
+            <div class="modal-body">
+              <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Dados</th>
+                            <th>Fornecidos</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Nome:</td>
+                        <td>Cesar Alberto Delgadillo Paixao</td>
+                    </tr>
+                    <tr>
+                        <td>Data de Nascimento:</td>
+                        <td>24/08/2012</td>
+                    </tr>
+                    <tr>
+                        <td>Sexo:</td>
+                        <td>Masculino</td>
+                    </tr>
+                    <tr>
+                        <td>Estado Civil:</td>
+                        <td>Solteiro</td>
+                    </tr>
+                    <tr>
+                        <td>Endereço:</td>
+                        <td>Rua Bolivia</td>
+                    </tr>
+                    <tr>
+                        <td>Bairro:</td>
+                        <td>Santa Rosa II</td>
+                    </tr>
+                    <tr>
+                        <td>Cidade:</td>
+                        <td>Cuiaba</td>
+                    </tr>
+                    <tr>
+                        <td>Estado:</td>
+                        <td>Mato Grosso</td>
+                    </tr>
+                    <tr>
+                        <td>Função / Missão:</td>
+                        <td>Servo Auxiliar</td>
+                    </tr>
+                    <tr>
+                        <td>Local/Curso:</td>
+                        <td>Paroquia Sao Goncalo</td>
+                    </tr>
+                    <tr>
+                        <td>Cidade do Curso:</td>
+                        <td>Cuiaba</td>
+                    </tr>
+                    <tr>
+                        <td>Telefone:</td>
+                        <td>3626 0909</td>
+                    </tr>
+                    <tr>
+                        <td>Celular:</td>
+                        <td>65 96710456</td>
+                    </tr>
+                     <tr>
+                        <td>E-mail:</td>
+                        <td>stratobeto@hotmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Profissão:</td>
+                        <td>Desenvolvedor Web</td>
+                    </tr>
+                    <tr>
+                        <td>Instituição em que Trabalha:</td>
+                        <td>Tecnomapas Ltda.</td>
+                    </tr>
+                    <tr>
+                        <td>Endereço Comercial:</td>
+                        <td>Ruas alguma coisa</td>
+                    </tr>
+                    <tr>
+                        <td>Bairro Comercial:</td>
+                        <td>Bosque da Saude</td>
+                    </tr>
+                    <tr>
+                        <td>Sacramentos:</td>
+                        <td>Batizado, Crisma</td>
+                    </tr>
+                    <tr>
+                        <td>Voluntario:</td>
+                        <td>GAJ - Grupo de Oração , Projeto Mana, Intercessor </td>
+                    </tr>
+                    <tr>
+                        <td>Veiculo:</td>
+                        <td>Moto, Caminhonete </td>
+                    </tr>
+                    
+                </table>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" data-dismiss="modal" >Fechar</a>
+              <a href="#" class="btn"><i class="icon-file"></i> Gerar PDF</a>
+            </div>
+          </div>
+
+<div class="rodape">
+ Copyright © 2012 | Enchei-vos - Todos os Direitos Reservados       
+</div>
+
+
+<script src="Contents/js/jquery.js"></script>
+<script src="Contents/js/utilities.js"></script>    
+<script src="Contents/js/bootstrap-transition.js"></script>
+<script src="Contents/js/bootstrap-alert.js"></script>
+<script src="Contents/js/bootstrap-modal.js"></script>
+<script src="Contents/js/bootstrap-dropdown.js"></script>
+<script src="Contents/js/bootstrap-scrollspy.js"></script>
+<script src="Contents/js/bootstrap-tab.js"></script>
+<script src="Contents/js/bootstrap-tooltip.js"></script>
+<script src="Contents/js/bootstrap-popover.js"></script>
+<script src="Contents/js/bootstrap-button.js"></script>
+<script src="Contents/js/bootstrap-collapse.js"></script>
+<script src="Contents/js/bootstrap-carousel.js"></script>
+<script src="Contents/js/bootstrap-typeahead.js"></script>
+    
+</body>
+</html>
